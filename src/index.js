@@ -66,8 +66,8 @@ function createMovieDetailCard(data, tagToAppend) {
         tagToAppend.appendChild(showtime)
 
 
-        const capacity = data.capacity
-        const titcketsSold = data.tickets_sold
+        let capacity = data.capacity
+        let titcketsSold = data.tickets_sold
         let remainingTickets = capacity - titcketsSold
 
         const availableTickets = document.createElement('p')
@@ -81,15 +81,55 @@ function createMovieDetailCard(data, tagToAppend) {
 
         const buyTicketBtn = document.createElement('button')
         buyTicketBtn.innerText = 'BUY TICKET'
+
+        if(remainingTickets >= 1){
+                
+            availableTickets.innerText =  remainingTickets
+         }else{
+             availableTickets.innerText = 0
+             buyTicketBtn.disabled = true
+             buyTicketBtn.innerText = 'SOLD OUT'
+             buyTicketBtn.style.backgroundColor = 'grey'
+         }
+
+
         buyTicketBtn.addEventListener('click',() => {
-            if(remainingTickets > 1){
-                remainingTickets--
+//start
+fetch(`http://localhost:3000/films/${data.id}`)
+                .then(resp => resp.json())
+                .then(datam => {
+
+
+fetch(`http://localhost:3000/films/${data.id}`,{
+            method : "PATCH",
+            headers : {
+            "Content-Type" : "application/json",
+            Accept : "application/json"
+        },
+        body : JSON.stringify({
+            tickets_sold : ((datam.tickets_sold < datam.capacity)?datam.tickets_sold + 1: datam.capacity)
+        })
+        })
+.then(resp => resp.json())
+.then(dataz => {
+    remainingTickets--
+
+   if(remainingTickets >= 1){
+                
                availableTickets.innerText =  remainingTickets
             }else{
                 availableTickets.innerText = 0
                 buyTicketBtn.disabled = true
                 buyTicketBtn.innerText = 'SOLD OUT'
+                buyTicketBtn.style.backgroundColor = 'grey'
             }
+
+
+})
+})
+//end
+
+         
 
             
 
