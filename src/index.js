@@ -6,10 +6,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const posterDiv = document.getElementById('posterDiv')
 
+showFirstMovie()
+
+    function showFirstMovie() {
     fetch('http://localhost:3000/films/1')
     .then(resp => resp.json())
     .then(data => createMovieDetailCard(data, movieContainer))
-
+    }
 
     fetch('http://localhost:3000/films')
     .then(resp => resp.json())
@@ -30,8 +33,26 @@ document.addEventListener('DOMContentLoaded', () => {
             })
 
             const pTitle = document.createElement('p')
+            const deleteBtn = document.createElement('button')
+            deleteBtn.innerText = 'DELETE'
+            deleteBtn.addEventListener('click',() => {
+              fetch(`http://localhost:3000/films/${movie.id}`,{
+                method : "DELETE",
+                headers : {
+                    "Content-Type" : "application/json",
+                    Accept : "application/json"
+                }
+              })
+              .then(resp => resp.json())
+              .then(data => {
+                liMovie.remove();
+
+              })
+                
+            })
             pTitle.innerText = movie.title
             liMovie.appendChild(pTitle)
+            pTitle.appendChild(deleteBtn)
             listMovies.appendChild(liMovie)
         })
 
