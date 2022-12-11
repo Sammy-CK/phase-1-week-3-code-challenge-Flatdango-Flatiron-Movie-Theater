@@ -18,6 +18,17 @@ document.addEventListener('DOMContentLoaded', () => {
         data.forEach(movie => {
             const liMovie = document.createElement('li')
 
+            liMovie.addEventListener('click', () => {
+                movieContainer.innerHTML = ''
+                fetch(`http://localhost:3000/films/${movie.id}`)
+                .then(resp => resp.json())
+                .then(data => {
+                    createMovieDetailCard(data, movieContainer)
+                })
+
+
+            })
+
             const pTitle = document.createElement('p')
             pTitle.innerText = movie.title
             liMovie.appendChild(pTitle)
@@ -39,10 +50,7 @@ function createMovieDetailCard(data, tagToAppend) {
     const poster = document.createElement('img')
         poster.src = data.poster
 
-        const posterDiv = document.getElementById('posterDiv')
-
-        posterDiv.appendChild(poster)
-        tagToAppend.appendChild(posterDiv)
+        tagToAppend.appendChild(poster)
 
         const title = document.createElement('h2')
         title.innerText = data.title
