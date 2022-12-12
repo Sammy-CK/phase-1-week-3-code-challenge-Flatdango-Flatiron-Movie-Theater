@@ -39,7 +39,7 @@ To use this repo on your machine requires some simple steps
         http://localhost:3000/films
 
 
-# Running the application
+## Running the application
 To open site in browser run while inside the cloned repo:
 
     explorer.exe index.html
