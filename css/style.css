@@ -1,27 +1,27 @@
-*{
-    margin : 0;
+* {
+    margin: 0;
 }
 
 
 header {
     background-color: grey;
-    color : white;
+    color: white;
     text-align: center;
-    height :65px;
+    height: 65px;
     font-size: 1.6vw;
 }
 
-ul{
+ul {
     background-color: lightgrey;
-    float : left;
-    list-style:circle;
+    float: left;
+    list-style: circle;
     width: 16%;
     text-align: center;
     margin-right: 10px;
-    color : black;
+    color: black;
 }
 
-li{
+li {
     border-bottom: thin solid grey;
     padding: 15px;
 
@@ -29,21 +29,21 @@ li{
 
 }
 
-#movieContainer{
+#movieContainer {
     text-align: center;
 
 }
 
 
 img {
-    width : 40%;
+    width: 40%;
     height: 500px;
     float: left;
-    margin : 10px;
+    margin: 10px;
 }
 
-button{
+button {
     margin: 20px;
     background-color: green;
-    color:white;
+    color: white;
 }

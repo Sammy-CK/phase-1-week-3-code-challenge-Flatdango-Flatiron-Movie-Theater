@@ -15,6 +15,10 @@ To get started you need to do the following:
 ## Alternative One
 Use Github pages to check out website and perform operations from there.
 
+This will allow access to basic deliverables only as Github pages json server does not allow PATCH and DELETE rquests.
+If you would like to access the extra bonus challenges: 
+Use alternative two
+
 ## Alternative Two
 ### Installation
 To use this repo on your machine requires some simple steps
@@ -38,8 +42,13 @@ To use this repo on your machine requires some simple steps
 
         http://localhost:3000/films
 
+- If you would like to access the extra and bonus deliverables, in index.html:
 
-## Running the application
+1) uncomment the script line for ExtraBonusChallenges.js
+
+2) Comment out the script line of index.js
+
+# Running the application
 To open site in browser run while inside the cloned repo:
 
     explorer.exe index.html
