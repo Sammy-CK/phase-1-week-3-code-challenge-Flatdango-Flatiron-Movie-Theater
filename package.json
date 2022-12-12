@@ -1,0 +1,26 @@
+{
+  "name": "phase-1-week-3-code-challenge-flatdango-flatiron-movie-theater",
+  "version": "1.0.0",
+  "description": "Flatiron Movie Theater web-app for purchasing tickets",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sammy-CK/phase-1-week-3-code-challenge-Flatdango-Flatiron-Movie-Theater.git"
+  },
+  "keywords": [
+    "json",
+    "server",
+    "html",
+    "css",
+    "javascript"
+  ],
+  "author": "Sammy-CK",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sammy-CK/phase-1-week-3-code-challenge-Flatdango-Flatiron-Movie-Theater/issues"
+  },
+  "homepage": "https://github.com/Sammy-CK/phase-1-week-3-code-challenge-Flatdango-Flatiron-Movie-Theater#readme"
+}
