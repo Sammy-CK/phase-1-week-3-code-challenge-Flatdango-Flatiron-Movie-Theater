@@ -14,6 +14,7 @@ To get started you need to do the following:
 
 ## Alternative One
 Use Github pages to check out website and perform operations from there.The link is:
+                
                 https://sammy-ck.github.io/phase-1-week-3-code-challenge-Flatdango-Flatiron-Movie-Theater/
 
 This will allow access to basic deliverables only as Github pages json server does not allow PATCH and DELETE rquests.
